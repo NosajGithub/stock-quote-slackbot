@@ -43,10 +43,7 @@ Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/sl
 
 ### Example Usage
 
-.. code:: python
-
-    >>> quote GOOG YHOO
-    The current stock price for 'GOOG' is: $750.26
-    The current stock price for 'YHOO' is: $32.94
-
+> quote GOOG YHOO
+> The current stock price for 'GOOG' is: $750.26
+> The current stock price for 'YHOO' is: $32.94
 
