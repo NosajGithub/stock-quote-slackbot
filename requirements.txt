@@ -1,6 +1,7 @@
 requests
 python-daemon
 pyyaml
+numpy
 websocket-client
 slackclient
 yahoo-finance

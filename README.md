@@ -5,6 +5,7 @@ A slackbot that retrieves stock quote information from Yahoo Finance given a tic
 Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/slackhq/python-rtmbot) wrapped around Łukasz Banasiak's [Python wrapper](https://github.com/lukaszbanasiak/yahoo-finance/) for the Yahoo Finance API.
 
 ### Dependencies
+* [numpy](https://pypi.python.org/pypi/numpy)
 * [websocket-client](https://pypi.python.org/pypi/websocket-client/)
 * [python-slackclient](https://pypi.python.org/pypi/slackclient)
 * [yahoo-finance](https://pypi.python.org/pypi/yahoo-finance)
@@ -41,7 +42,15 @@ Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/sl
   python rtmbot.py
 ````
 
-### Example Usage
+### Usage
+
+There are two ways to use stockbot. The first is to input the trigger word ('quote' by default) and one or more stock tickers. 
+You'll get back a separate reply for each stock listed.  
+
+The second usage is to enter the word 'range', a ticker symbol, and a start and end date. 
+Stockbot will return the average stock price over that date range.  
+
+### Example Usage  
 
     >>> quote GOOG YHOO
     Stock​: 'GOOG'
@@ -57,3 +66,7 @@ Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/sl
     52 Wk Range​: $27.20 - $51.68
     YoY Change​: -33%
     Market Cap​: $31.93B
+    
+    >>> range yhoo 2014-11-30 2015-11-30
+    The average price for 'YHOO' from 2014-11-30 to 2015-11-30 is: $40.41
+    
