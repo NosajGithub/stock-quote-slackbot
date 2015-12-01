@@ -4,6 +4,36 @@ A slackbot that retrieves stock quote information from Yahoo Finance given a tic
 ## Background
 Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/slackhq/python-rtmbot) wrapped around Łukasz Banasiak's [Python wrapper](https://github.com/lukaszbanasiak/yahoo-finance/) for the Yahoo Finance API.
 
+### Usage
+
+There are two ways to use stockbot. The first is to input the trigger word ('quote' by default) and one or more stock tickers. 
+You'll get back a separate reply for each stock listed.  
+
+The second usage is to enter the word 'range', a ticker symbol, and a start and end date. 
+Stockbot will return the average stock price over that date range.  
+
+In both cases, the trigger word must be the first word in the message. It is not case sensitive.  
+
+### Example Usage  
+
+    >>> quote GOOG YHOO
+    Stock​: 'GOOG'
+    Current Price​: $742.60
+    Day Range​: $741.27 - $754.93
+    52 Wk Range​: $486.23 - $762.71
+    YoY Change​: +39%
+    Market Cap​: $510.70B
+     
+    Stock​: 'YHOO'
+    Current Price​: $33.81
+    Day Range​: $32.85 - $33.83
+    52 Wk Range​: $27.20 - $51.68
+    YoY Change​: -33%
+    Market Cap​: $31.93B
+    
+    >>> range yhoo 2014-11-30 2015-11-30
+    The average price for 'YHOO' from 2014-11-30 to 2015-11-30 is: $40.41
+
 ### Dependencies
 * [numpy](https://pypi.python.org/pypi/numpy)
 * [websocket-client](https://pypi.python.org/pypi/websocket-client/)
@@ -41,34 +71,4 @@ Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/sl
 ````
   python rtmbot.py
 ````
-
-### Usage
-
-There are two ways to use stockbot. The first is to input the trigger word ('quote' by default) and one or more stock tickers. 
-You'll get back a separate reply for each stock listed.  
-
-The second usage is to enter the word 'range', a ticker symbol, and a start and end date. 
-Stockbot will return the average stock price over that date range.  
-
-In both cases, the trigger word must be the first word in the message. It is not case sensitive.  
-
-### Example Usage  
-
-    >>> quote GOOG YHOO
-    Stock​: 'GOOG'
-    Current Price​: $742.60
-    Day Range​: $741.27 - $754.93
-    52 Wk Range​: $486.23 - $762.71
-    YoY Change​: +39%
-    Market Cap​: $510.70B
-     
-    Stock​: 'YHOO'
-    Current Price​: $33.81
-    Day Range​: $32.85 - $33.83
-    52 Wk Range​: $27.20 - $51.68
-    YoY Change​: -33%
-    Market Cap​: $31.93B
-    
-    >>> range yhoo 2014-11-30 2015-11-30
-    The average price for 'YHOO' from 2014-11-30 to 2015-11-30 is: $40.41
     
