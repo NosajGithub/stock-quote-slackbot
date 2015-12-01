@@ -50,7 +50,7 @@ Stockbot is Slack's Python-based [real-time messaging bot](https://github.com/sl
     52 Wk Range​: $486.23 - $762.71
     YoY Change​: +39%
     Market Cap​: $510.70B
-​
+     
     Stock​: 'YHOO'
     Current Price​: $33.81
     Day Range​: $32.85 - $33.83
