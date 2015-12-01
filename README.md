@@ -50,6 +50,8 @@ You'll get back a separate reply for each stock listed.
 The second usage is to enter the word 'range', a ticker symbol, and a start and end date. 
 Stockbot will return the average stock price over that date range.  
 
+In both cases, the trigger word must be the first word in the message. It is not case sensitive.  
+
 ### Example Usage  
 
     >>> quote GOOG YHOO

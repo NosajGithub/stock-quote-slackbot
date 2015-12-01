@@ -11,7 +11,7 @@ crontable = []
 outputs = []
 
 config = yaml.load(file('rtmbot.conf', 'r'))
-trig_word = config["TRIGGER_WORD"]
+trig_word = config["TRIGGER_WORD"].lower()
 
 def process_message(data):
     """Process a message entered by a user
@@ -22,9 +22,10 @@ def process_message(data):
     data -- the message's data
     """
     message = data["text"].lower()
+    first_word = message.split()[0].lower()
     
     # Look for trigger word, remove it, and look up each word
-    if trig_word in message:
+    if trig_word == first_word:
         print message
         rest_of_message = re.sub(trig_word, '', message)
         tline=rest_of_message.split()
@@ -34,7 +35,7 @@ def process_message(data):
             for word in tline:
                 outputs.append([data['channel'], find_quote(word)])
 
-    elif "range" in message:
+    elif "range" == first_word:
         print message
         outputs.append([data['channel'], find_range(message)])
                 
